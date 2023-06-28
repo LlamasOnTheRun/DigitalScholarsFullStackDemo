@@ -11,7 +11,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>
       <Routes>
-        <Route index element={<LandingPage />} />
+        <Route index element={<LandingPage isLogin={false} />} />
         <Route path="create/account" element={<CreateAccount />} />
         <Route path="login" element={<Login />} />
       </Routes>

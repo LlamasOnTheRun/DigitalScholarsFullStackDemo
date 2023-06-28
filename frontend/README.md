@@ -73,3 +73,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 References Used: 
 - https://www.w3schools.com/react/react_router.asp
 - https://www.w3schools.com/css/css_navbar.asp
+- https://www.w3schools.com/howto/howto_css_login_form.asp
