@@ -1,7 +1,7 @@
 import './../App.css';
 import NavigationBar from './NavigationBar';
 
-function App() {
+function App(props) {
   return (
     <div className="App">
       <NavigationBar/>
@@ -20,6 +20,7 @@ function App() {
           </form>
         </div>
       </header>
+      {props.updateLoginStatus(true)}
     </div>
   );
 }

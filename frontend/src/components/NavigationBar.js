@@ -6,7 +6,7 @@ function NavigationBar() {
     <ul>
       <li><Link to="/">Home</Link></li>
       <li><Link to="/create/account">Create Account</Link></li>
-      <li><a href="/login">Login</a></li>
+      <li><Link to="/login">Login</Link></li>
     </ul>
   );
 }
