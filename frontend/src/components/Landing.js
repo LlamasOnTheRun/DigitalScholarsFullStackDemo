@@ -1,4 +1,5 @@
 import './../App.css';
+import Account from './Account';
 import NavigationBar from './NavigationBar';
 import { useState } from 'react';
 import React, { Fragment } from 'react'
@@ -14,7 +15,7 @@ function App(props) {
       renderedContent = (
         <React.Fragment>
           <header className="App-header">
-            Im Logged in
+            <Account/>
           </header>
         </React.Fragment>
       );

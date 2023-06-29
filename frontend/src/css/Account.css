@@ -1,0 +1,29 @@
+.info-showcase {
+  float: left;
+  height: 80%;
+}
+
+.profile-pic {
+  border-radius: 1000px;
+}
+
+.profile-name {
+  margin: 20px;
+  font-weight: bold;
+}
+
+.games-showcase {
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 500px;
+}
+
+.game-display {
+  margin: 20px;
+  font-weight: bold;
+  border: 5px solid black;
+  background-color: black;
+}
