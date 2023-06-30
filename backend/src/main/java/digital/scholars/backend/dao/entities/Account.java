@@ -1,6 +1,7 @@
 package digital.scholars.backend.dao.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import digital.scholars.backend.dao.request.AccountCreationRequest;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,9 +20,9 @@ public class Account {
     private String lastName;
     private String email;
     private String password;
-    private String game1;
-    private String game2;
-    private String game3;
+    @OneToMany(targetEntity = Game.class, mappedBy = "account", fetch = FetchType.EAGER)
+    List<Game> games;
+
     public Account() {
     }
 
