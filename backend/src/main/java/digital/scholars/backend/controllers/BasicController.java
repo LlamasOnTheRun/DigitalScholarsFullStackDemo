@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @Slf4j
+@CrossOrigin(origins = "http://localhost:3000")
 public class BasicController {
     @Autowired
     AccountRepository accountRepository;
@@ -60,9 +61,10 @@ public class BasicController {
 
     @GetMapping(path="/login")
     @ResponseBody
-    public ResponseEntity<Account> login(@RequestBody LoginRequest loginRequest) {
-        log.info("Request Object: {}", loginRequest.toString());
-        Account account = accountRepository.findByEmailAndPassword(loginRequest.getEmail(), loginRequest.getPassword());
+    public ResponseEntity<Account> login(@RequestParam String email, @RequestParam String password) {
+        log.info("Chekc check");
+        log.info("Request Object: {}", email);
+        Account account = accountRepository.findByEmailAndPassword(email, password);
         return new ResponseEntity<Account>(account, HttpStatusCode.valueOf(200));
     }
 

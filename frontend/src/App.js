@@ -8,13 +8,14 @@ import { useState } from 'react';
 function App() {
 
     const [isLogin, setIsLogin] = useState(false);
+    const [accountDetails, setAccountDetails] = useState();
     
     return (
     <div className="App">
         <Routes>
             <Route index element={<LandingPage isLogin={isLogin} />} />
             <Route path="create/account" element={<CreateAccount />} />
-            <Route path="login" element={<Login updateLoginStatus={setIsLogin}/>} />
+            <Route path="login" element={<Login updateAccountDetails={setAccountDetails} updateLoginStatus={setIsLogin}/>} />
         </Routes>
     </div>
     );
