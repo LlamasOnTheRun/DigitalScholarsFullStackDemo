@@ -21,6 +21,7 @@ public class Account {
     private String email;
     private String password;
     @OneToMany(targetEntity = Game.class, mappedBy = "account", fetch = FetchType.EAGER)
+    @JsonIgnoreProperties("account")
     List<Game> games;
 
     public Account() {

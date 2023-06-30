@@ -4,6 +4,7 @@ import digital.scholars.backend.dao.entities.Account;
 import digital.scholars.backend.dao.entities.Game;
 import digital.scholars.backend.dao.request.AccountCreationRequest;
 import digital.scholars.backend.dao.request.AddGameRequest;
+import digital.scholars.backend.dao.request.LoginRequest;
 import digital.scholars.backend.dao.request.RemoveGameRequest;
 import digital.scholars.backend.repo.AccountRepository;
 import digital.scholars.backend.repo.GameRepository;
@@ -55,6 +56,14 @@ public class BasicController {
         gameRepository.delete(game);
 
         return new ResponseEntity<>(HttpStatusCode.valueOf(200));
+    }
+
+    @GetMapping(path="/login")
+    @ResponseBody
+    public ResponseEntity<Account> login(@RequestBody LoginRequest loginRequest) {
+        log.info("Request Object: {}", loginRequest.toString());
+        Account account = accountRepository.findByEmailAndPassword(loginRequest.getEmail(), loginRequest.getPassword());
+        return new ResponseEntity<Account>(account, HttpStatusCode.valueOf(200));
     }
 
 }
