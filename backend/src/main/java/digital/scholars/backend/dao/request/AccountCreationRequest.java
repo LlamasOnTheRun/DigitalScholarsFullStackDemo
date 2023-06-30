@@ -1,4 +1,4 @@
-package digital.scholars.backend.pojo;
+package digital.scholars.backend.dao.request;
 
 import lombok.Data;
 
