@@ -15,7 +15,7 @@ function App(props) {
       renderedContent = (
         <React.Fragment>
           <header className="App-header">
-            <Account/>
+            <Account getAccountDetails={props.getAccountDetails}/>
           </header>
         </React.Fragment>
       );

@@ -11,7 +11,6 @@ function Login(props) {
   function getAccountDetais(event) {
     event.preventDefault();
     console.log(email)
-    console.log("Hey!")
     axios({
       method: 'get',
       url: 'http://localhost:8080/login', 
@@ -28,6 +27,10 @@ function Login(props) {
     })
     .then((response) => {
       console.log(response);
+      if(response.data) {
+        props.updateAccountDetails(response.data);
+        props.updateLoginStatus(true);
+      }
     }, (error) => {
       console.log(error);
     });
