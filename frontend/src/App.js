@@ -13,7 +13,7 @@ function App() {
     return (
     <div className="App">
         <Routes>
-            <Route index element={<LandingPage isLogin={isLogin} getAccountDetails={accountDetails} />} />
+            <Route index element={<LandingPage isLogin={isLogin} getAccountDetails={accountDetails} updateAccountDetails={setAccountDetails}/>} />
             <Route path="create/account" element={<CreateAccount />} />
             <Route path="login" element={<Login updateAccountDetails={setAccountDetails} updateLoginStatus={setIsLogin}/>} />
         </Routes>

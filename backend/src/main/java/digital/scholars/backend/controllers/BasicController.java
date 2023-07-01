@@ -53,7 +53,7 @@ public class BasicController {
 
         Account account = accountRepository.findByEmail(removeGameRequest.getEmail());
 
-        Game game = account.getGames().get(0);
+        Game game = account.getGames().get(account.getGames().size() - 1);
         gameRepository.delete(game);
 
         return new ResponseEntity<>(HttpStatusCode.valueOf(200));
@@ -62,7 +62,6 @@ public class BasicController {
     @GetMapping(path="/login")
     @ResponseBody
     public ResponseEntity<Account> login(@RequestParam String email, @RequestParam String password) {
-        log.info("Chekc check");
         log.info("Request Object: {}", email);
         Account account = accountRepository.findByEmailAndPassword(email, password);
         return new ResponseEntity<Account>(account, HttpStatusCode.valueOf(200));

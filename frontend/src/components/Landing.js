@@ -1,13 +1,9 @@
 import './../App.css';
 import Account from './Account';
 import NavigationBar from './NavigationBar';
-import { useState } from 'react';
-import React, { Fragment } from 'react'
+import React from 'react'
 
 function App(props) {
-
-  //const [age, setAge] = useState(28);
-  //const [name, setName] = useState('Taylor');
 
   function isLogin() {
     let renderedContent;
@@ -15,7 +11,7 @@ function App(props) {
       renderedContent = (
         <React.Fragment>
           <header className="App-header">
-            <Account getAccountDetails={props.getAccountDetails}/>
+            <Account getAccountDetails={props.getAccountDetails} updateAccountDetails={props.updateAccountDetails}/>
           </header>
         </React.Fragment>
       );
