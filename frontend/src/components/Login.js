@@ -11,9 +11,11 @@ function Login(props) {
   function getAccountDetais(event) {
     event.preventDefault();
     console.log(email)
+    // This HTTP request is logging into a account
     axios({
       method: 'get',
       url: 'http://localhost:8080/login', 
+      // I am passing data in this request
       params: {
         email: email,
         password: password
@@ -28,6 +30,9 @@ function Login(props) {
     .then((response) => {
       console.log(response);
       if(response.data) {
+        // I update my applications state to:
+        // A: Save Account Details such as games and users name
+        // B: Inform the application someone has logged in
         props.updateAccountDetails(response.data);
         props.updateLoginStatus(true);
       }

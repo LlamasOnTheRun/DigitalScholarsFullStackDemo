@@ -32,8 +32,12 @@ function Account(props) {
 
     async function addGame(event) {
         event.preventDefault();
+        // This HTTP requests goes ahead and adds a game
         await axios({
+          // This is called the HTTP method
           method: 'post',
+          // Notice it is calling localhost on 8080 with
+          // a URI of "/add/game"
           url: 'http://localhost:8080/add/game', 
           data: {
             email: props.getAccountDetails.email,
@@ -56,6 +60,7 @@ function Account(props) {
 
     async function removeGame() {
         console.log("Removing Game")
+        // This HTTP requests goes ahead and removes a game
         await axios({
           method: 'delete',
           url: 'http://localhost:8080/remove/game',

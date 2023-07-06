@@ -13,8 +13,11 @@ function App() {
     return (
     <div className="App">
         <Routes>
+            {/*Route: http://localhost:3000 */}
             <Route index element={<LandingPage isLogin={isLogin} getAccountDetails={accountDetails} updateAccountDetails={setAccountDetails}/>} />
+            {/*Route: http://localhost:3000/create/account */}
             <Route path="create/account" element={<CreateAccount />} />
+            {/*Route: http://localhost:3000/login */}
             <Route path="login" element={<Login updateAccountDetails={setAccountDetails} updateLoginStatus={setIsLogin}/>} />
         </Routes>
     </div>

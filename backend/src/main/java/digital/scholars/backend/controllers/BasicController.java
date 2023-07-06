@@ -4,7 +4,6 @@ import digital.scholars.backend.dao.entities.Account;
 import digital.scholars.backend.dao.entities.Game;
 import digital.scholars.backend.dao.request.AccountCreationRequest;
 import digital.scholars.backend.dao.request.AddGameRequest;
-import digital.scholars.backend.dao.request.LoginRequest;
 import digital.scholars.backend.dao.request.RemoveGameRequest;
 import digital.scholars.backend.repo.AccountRepository;
 import digital.scholars.backend.repo.GameRepository;
